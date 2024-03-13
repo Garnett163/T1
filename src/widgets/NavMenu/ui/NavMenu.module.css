@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  gap: 54px;
+}
+
+.link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #606060;
+  text-decoration: none;
+  font-size: 18px;
+}
