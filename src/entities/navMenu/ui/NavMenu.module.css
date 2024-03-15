@@ -16,3 +16,12 @@
   text-decoration: none;
   font-size: 18px;
 }
+
+@media screen and (max-width: 500px) {
+  .list {
+    gap: 20px;
+  }
+  .link {
+    font-size: 14px;
+  }
+}

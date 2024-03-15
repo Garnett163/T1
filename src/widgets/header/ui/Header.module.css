@@ -1,5 +1,10 @@
 .header {
+  background-color: #f9f9f9;
+}
+
+.containerHeader {
   margin: 0 auto;
+  padding: 60px 0 32px 0;
   padding-top: 60px;
   padding-bottom: 32px;
   max-width: 1248px;
@@ -7,4 +12,18 @@
   align-items: center;
   border-bottom: 1px solid #cbcbcb;
   gap: 98px;
+}
+
+@media screen and (max-width: 1350px) {
+  .header {
+    padding: 40px 30px 32px 30px;
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 15px 10px;
+    gap: 30px;
+  }
 }

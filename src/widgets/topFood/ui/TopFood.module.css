@@ -1,0 +1,53 @@
+.topFood {
+  background-color: #f9f9f9;
+}
+
+.containerSection {
+  padding-top: 104px;
+  padding-bottom: 227px;
+  margin: 0 auto;
+  max-width: 1260px;
+  border-bottom: 1px solid #cbcbcb;
+}
+.title {
+  padding-right: 40px;
+  padding-bottom: 87px;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 25.56px;
+  color: #323142;
+  text-align: center;
+}
+
+.titleSpan {
+  color: #6c5fbc;
+}
+
+.foodCardsList {
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  gap: 25px 25px;
+  grid-template-columns: repeat(3, minmax(0, 400px));
+}
+
+@media screen and (max-width: 1300px) {
+  .foodCardsList {
+    padding: 104px 15px 0 15px;
+    grid-template-columns: repeat(2, minmax(0, 400px));
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .foodCardsList {
+    padding-top: 40px;
+    grid-template-columns: repeat(1, minmax(0, 400px));
+  }
+  .title {
+    font-size: 26px;
+    padding-bottom: 25px;
+  }
+  .containerSection {
+    padding-bottom: 40px;
+  }
+}

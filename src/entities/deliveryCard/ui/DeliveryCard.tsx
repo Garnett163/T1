@@ -9,15 +9,16 @@ interface deliveryCardProps {
 }
 
 function deliveryCard({ srcImage, title, status, time, classSecondary }: deliveryCardProps) {
+  const statusClassName = status === 'Cancelled' ? styles.cancelled : '';
   return (
-    <div className={`${styles.deliveryCard} ${classSecondary || ''}`}>
+    <li className={`${styles.deliveryCard} ${classSecondary || ''}`}>
       <img className={styles.img} src={srcImage} alt={title}></img>
       <div>
         <h4 className={styles.title}>{title}</h4>
-        <p className={styles.status}>{status}</p>
+        <p className={`${styles.status} ${statusClassName}`}>{status}</p>
       </div>
       <span className={styles.time}>{time}</span>
-    </div>
+    </li>
   );
 }
 

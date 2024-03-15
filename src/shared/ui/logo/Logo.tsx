@@ -1,8 +1,8 @@
 import styles from './Logo.module.css';
-import headerLogo from '../../assets/svg/Logo.svg';
+import logo from '../../assets/svg/Logo.svg';
 
 function Logo() {
-  return <img className={styles.logo} src={headerLogo}></img>;
+  return <img className={styles.logo} src={logo}></img>;
 }
 
 export default Logo;
