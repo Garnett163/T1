@@ -1,8 +1,6 @@
 ## Запуск проекта
 
-# Макет проекта
-
-[Макет](https://www.figma.com/file/TjRJ7LLNtMTWGAt13VWqCw/2-задание%3A-вёрстка-%2B-React?type=design&node-id=1-2&mode=design&t=2lk79ibXvQKCvzwA-0)
+[Макет Проекта](https://www.figma.com/file/TjRJ7LLNtMTWGAt13VWqCw/2-задание%3A-вёрстка-%2B-React?type=design&node-id=1-2&mode=design&t=2lk79ibXvQKCvzwA-0)
 
 Для запуска проекта необходимо выполнить следующие действия:
 
