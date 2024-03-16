@@ -7,6 +7,7 @@ import TopFood from '@widgets/topFood/ui/TopFood';
 import Dashboard from '@widgets/dashboard/ui/Dashboard';
 import FeedBack from '@widgets/feedBack/ui/FeedBack';
 import Faq from '@widgets/faq/ui/Faq';
+import Footer from '@widgets/footer/ui/Footer';
 
 function HomePage() {
   return (
@@ -21,6 +22,7 @@ function HomePage() {
         <FeedBack />
         <Faq />
       </main>
+      <Footer />
     </div>
   );
 }

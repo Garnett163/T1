@@ -12,7 +12,7 @@ function deliveryCard({ srcImage, title, status, time, classSecondary }: deliver
   const statusClassName = status === 'Cancelled' ? styles.cancelled : '';
   return (
     <li className={`${styles.deliveryCard} ${classSecondary || ''}`}>
-      <img className={styles.img} src={srcImage} alt={title}></img>
+      <img className={styles.img} src={srcImage} alt={title} loading="lazy"></img>
       <div>
         <h4 className={styles.title}>{title}</h4>
         <p className={`${styles.status} ${statusClassName}`}>{status}</p>

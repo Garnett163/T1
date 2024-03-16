@@ -41,6 +41,7 @@ function Dashboard() {
           src={purchasesDashboard}
           alt="Изображение панели доставки приложения"
           className={styles.purchasesDashboard}
+          loading="lazy"
         ></img>
       </div>
     </section>

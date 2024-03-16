@@ -22,8 +22,8 @@ function Promo() {
             <span className={styles.descriptionSpan}>$20&nbsp;bonus</span>.
           </p>
           <div className={styles.containerBtns}>
-            <Button textBtn="Get Started" />
-            <Button textBtn="Go Pro" classSecondary={styles.classBtnSecondary} />
+            <Button textBtn="Get Started" ariaLabel='Кнопка "Get Started"' />
+            <Button textBtn="Go Pro" classSecondary={styles.classBtnSecondary} ariaLabel='Кнопка "Go Pro"' />
           </div>
         </article>
         <div className={styles.containerFood}>

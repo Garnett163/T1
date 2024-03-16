@@ -14,12 +14,18 @@ function FeedBack() {
               <h4 className={styles.nickName}>@omottley2h</h4>
               <img src={commentQuote} alt="Декоративные кавычки"></img>
             </div>
-            <p>I cannot believe how I found you, this is so pretty.</p>
+            <p className={styles.commentText}>I cannot believe how I found you, this is so pretty.</p>
           </li>
-          <li className={styles.comment}>I cannot believe how I found you, this is so pretty</li>
-          <li className={`${styles.comment} ${styles.partiallyHidden}`}>
-            I cannot believe how I found you, this is so pretty
-          </li>
+
+          <div className={styles.containerColumn}>
+            <div className={styles.containerFlex}>
+              <li className={styles.comment}>I cannot believe how I found you, this is so pretty</li>
+              <li className={`${styles.comment} ${styles.partiallyHidden}`}>
+                I cannot believe how I found you, this is so pretty
+              </li>
+            </div>
+            <div className={styles.scroll}></div>
+          </div>
         </ul>
       </div>
     </section>

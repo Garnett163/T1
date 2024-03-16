@@ -1,22 +1,27 @@
 import styles from './NavMenu.module.css';
 import { Link } from 'react-router-dom';
 
-function NavMenu() {
+interface NavMenuProps {
+  listClassTwo?: string;
+  linkClassTwo?: string;
+}
+
+function NavMenu({ listClassTwo, linkClassTwo }: NavMenuProps) {
   return (
     <nav className={styles.nav}>
-      <ul className={styles.list}>
+      <ul className={`${styles.list} ${listClassTwo || ''}`}>
         <li>
-          <Link className={styles.link} to="/recipes">
+          <Link className={`${styles.link} ${linkClassTwo || ''}`} to="/recipes">
             Recipes
           </Link>
         </li>
         <li>
-          <a className={styles.link} href="#faq">
+          <a className={`${styles.link} ${linkClassTwo || ''}`} href="#faq">
             FAQ
           </a>
         </li>
         <li>
-          <Link className={styles.link} to="/blog">
+          <Link className={`${styles.link} ${linkClassTwo || ''}`} to="/blog">
             Blog
           </Link>
         </li>

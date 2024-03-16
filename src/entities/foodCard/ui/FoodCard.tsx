@@ -12,12 +12,12 @@ interface FoodCardProps {
 function FoodCard({ srcImage, title, time, icon, rating, typeFood }: FoodCardProps) {
   return (
     <li className={styles.foodCard}>
-      <img src={srcImage} alt="Карточка еды" className={styles.img} />
+      <img src={srcImage} alt="Карточка еды" className={styles.img} loading="lazy" />
       <div className={styles.containerContent}>
         <p className={styles.typeFood}>{typeFood}</p>
         <div className={styles.containerFlex}>
           <h4 className={styles.title}>{title}</h4>
-          <button className={styles.favoriteBtn}></button>
+          <button className={styles.favoriteBtn} aria-label='Кнопка "Добавить в избранное"'></button>
         </div>
         <div className={styles.containerFlex}>
           <p className={styles.time}>{time}</p>

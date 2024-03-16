@@ -15,14 +15,14 @@
 }
 
 @media screen and (max-width: 1350px) {
-  .header {
+  .containerHeader {
     padding: 40px 30px 32px 30px;
     gap: 50px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .header {
+  .containerHeader {
     padding: 15px 10px;
     gap: 30px;
   }

@@ -7,7 +7,12 @@ function QualityPromo() {
   return (
     <section className={styles.qualityPromo}>
       <div className={styles.containerSection}>
-        <img src={mobilePhoto} alt="Мобильный телефон с приложением" className={styles.mobilePhoto}></img>
+        <img
+          src={mobilePhoto}
+          alt="Мобильный телефон с приложением"
+          className={styles.mobilePhoto}
+          loading="lazy"
+        ></img>
         <article className={styles.article}>
           <h2 className={styles.title}>
             Premium <span className={styles.titleSpan}>Quality</span> For Your Health
@@ -19,7 +24,7 @@ function QualityPromo() {
             These foods promote overall wellness by support healthy digestion and boosting immunity
           </p>
           <div className={styles.containerBtn}>
-            <Button textBtn="Download" classSecondary={styles.classBtnSecondary} />
+            <Button textBtn="Download" classSecondary={styles.classBtnSecondary} ariaLabel='Кнопка "Download"' />
             <img src={arrowTopFood} alt="Декоротивная стрелка" className={styles.arrowTopFood}></img>
           </div>
         </article>
