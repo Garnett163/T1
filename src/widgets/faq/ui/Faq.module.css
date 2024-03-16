@@ -11,6 +11,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+
+.linesFaq {
+  position: absolute;
+  top: 148px;
+  right: 311px;
 }
 
 .title {
@@ -45,6 +52,10 @@
     padding-bottom: 30px;
     max-width: 350px;
   }
+  .linesFaq {
+    width: 27px;
+    height: 23px;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -58,5 +69,9 @@
     text-align: center;
     font-size: 19px;
     width: 100%;
+  }
+  .linesFaq {
+    top: 55px;
+    right: 81px;
   }
 }

@@ -1,10 +1,12 @@
 import styles from './Faq.module.css';
 import FaqCard from '@entities/faqCard/ui/FaqCard';
+import linesFaq from '@shared/assets/svg/linesFaq.svg';
 
 function Faq() {
   return (
     <section className={styles.faq} id="faq">
       <div className={styles.containerSection}>
+        <img src={linesFaq} alt="Декоративные линии" className={styles.linesFaq}></img>
         <h2 className={styles.title}>
           Frequently Asked <span className={styles.titleSpan}>Questions</span>
         </h2>
