@@ -1,7 +1,33 @@
+import 'swiper/css';
+import 'swiper/css/pagination';
 import styles from './FeedBack.module.css';
-import commentQuote from '@shared/assets/svg/commentCardQuotes.svg';
+import './Swiper.css';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import { ICommentCard } from '@entities/commentCard/model/types';
+import CommentCard from '@entities/commentCard/ui/CommentCard';
+import ErrorApi from '@shared/ui/errorApi/ErrorApi';
+import Preloader from '@shared/ui/preloader/Preloader';
+import { useGetCommentsQuery } from '../api/widgetFeedBack';
 
 function FeedBack() {
+  const { data: commentsData, isError, isLoading } = useGetCommentsQuery();
+  const [comments, setComments] = useState<ICommentCard[]>([]);
+
+  useEffect(() => {
+    if (commentsData) {
+      const sliceSixComments = commentsData.comments.slice(0, 6);
+      setComments(sliceSixComments);
+    } else if (isError) {
+      console.log('Произошла ошибка при загрузке данных');
+    }
+  }, [commentsData, isError]);
+
+  if (isLoading) {
+    return <Preloader />;
+  }
+
   return (
     <section className={styles.feedBack}>
       <div className={styles.containerSection}>
@@ -9,24 +35,30 @@ function FeedBack() {
           <span className={styles.titleSpan}>Customer</span> Say
         </h2>
         <ul className={styles.commentsList}>
-          <li className={styles.commentWithQuote}>
-            <div className={styles.containerComment}>
-              <h4 className={styles.nickName}>@omottley2h</h4>
-              <img src={commentQuote} alt="Декоративные кавычки"></img>
-            </div>
-            <p className={styles.commentText}>I cannot believe how I found you, this is so pretty.</p>
-          </li>
-
-          <div className={styles.containerColumn}>
-            <div className={styles.containerFlex}>
-              <li className={styles.comment}>I cannot believe how I found you, this is so pretty</li>
-              <li className={`${styles.comment} ${styles.partiallyHidden}`}>
-                I cannot believe how I found you, this is so pretty
-              </li>
-            </div>
-            <div className={styles.scroll}></div>
-          </div>
+          <Swiper
+            spaceBetween={46}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            breakpoints={{
+              1440: {
+                slidesPerView: 2,
+              },
+              800: {
+                slidesPerView: 2,
+              },
+            }}
+            className={styles.swiper}
+          >
+            {comments.map((comment: ICommentCard) => (
+              <SwiperSlide key={comment.id} className={styles.swiperSlide}>
+                <CommentCard key={comment.id} commentCard={comment} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </ul>
+        <ErrorApi errorApi={isError} />
       </div>
     </section>
   );

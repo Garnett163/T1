@@ -1,6 +1,6 @@
 .foodCard {
   width: 400px;
-  height: 300px;
+  /* height: 300px; */
   box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
   border: 1.25px solid #f4f4f6;
   border-radius: 30px;
@@ -16,27 +16,29 @@
 }
 
 .img {
-  object-fit: contain;
+  height: 176px;
+  object-fit: cover;
   width: 100%;
+  border-radius: 30px 30px 0 0;
 }
 
 .containerContent {
-  padding: 2px 0 18px 34px;
+  padding: 2px 25px 18px 25px;
 }
 
 .typeFood {
   padding: 3px 6px 3px 7px;
+  width: fit-content;
   font-weight: 400;
   font-size: 12px;
   color: #daa31a;
   font-family: 'Poppins', sans-serif;
   background-color: #f7edd0;
   border-radius: 5px;
-  width: 44px;
-  height: 26px;
 }
 
 .title {
+  width: 70%;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 26px;
@@ -45,7 +47,6 @@
 }
 
 .favoriteBtn {
-  margin-left: 62px;
   width: 40px;
   height: 40px;
   background: url('../../../shared/assets/svg/favoriteIcon.svg') no-repeat;
@@ -56,7 +57,19 @@
   transition: opacity 0.3s ease;
 }
 
-.containerFlex {
+.containerFlexTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerTagsFlex {
+  display: flex;
+  gap: 10px;
+}
+
+.containerRatingFlex {
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
 }
