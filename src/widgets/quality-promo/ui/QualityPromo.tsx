@@ -7,12 +7,7 @@ function QualityPromo() {
   return (
     <section className={styles.qualityPromo}>
       <div className={styles.containerSection}>
-        <img
-          src={mobilePhoto}
-          alt="Мобильный телефон с приложением"
-          className={styles.mobilePhoto}
-          loading="lazy"
-        ></img>
+        <img src={mobilePhoto} alt="Мобильный телефон с приложением" className={styles.mobilePhoto} loading="lazy" />
         <article className={styles.article}>
           <h2 className={styles.title}>
             Premium <span className={styles.titleSpan}>Quality</span> For Your Health
@@ -25,7 +20,7 @@ function QualityPromo() {
           </p>
           <div className={styles.containerBtn}>
             <Button textBtn="Download" classSecondary={styles.classBtnSecondary} ariaLabel='Кнопка "Download"' />
-            <img src={arrowTopFood} alt="Декоротивная стрелка" className={styles.arrowTopFood}></img>
+            <img src={arrowTopFood} alt="Декоротивная стрелка" className={styles.arrowTopFood} />
           </div>
         </article>
       </div>

@@ -5,6 +5,7 @@ import { IFoodCard } from '@entities/foodCard/model/types';
 import { useGetTopFoodQuery } from '../api/widgetTopFoodApi';
 import Preloader from '@shared/ui/preloader/Preloader';
 import ErrorApi from '@shared/ui/errorApi/ErrorApi';
+import { START_INDEX, END_INDEX_TOP_FOOD } from '@shared/constants';
 
 function TopFood() {
   const { data: recipesData, isError, isLoading } = useGetTopFoodQuery();
@@ -14,7 +15,7 @@ function TopFood() {
     const recipes = recipesData?.recipes;
     if (recipes) {
       const sortedFoodCards = [...recipesData.recipes].sort((a: IFoodCard, b: IFoodCard) => b.rating - a.rating);
-      const topThreeFoodCards = sortedFoodCards.slice(0, 3);
+      const topThreeFoodCards = sortedFoodCards.slice(START_INDEX, END_INDEX_TOP_FOOD);
       setFoodCards(topThreeFoodCards);
     } else if (isError) {
       console.log(`Произошла ошибка при загрузки данных`);

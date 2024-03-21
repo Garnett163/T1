@@ -2,9 +2,10 @@ import sttyles from './Articles.module.css';
 import ArticleCard from '@entities/articleCard/ui/ArticleCard';
 
 function Articles() {
-  fetch('https://dummyjson.com/posts?limit=12&skip=10&select=title,reactions')
+  fetch('https://dummyjson.com/posts?limit=12&skip=12&select=title,reactions')
     .then(res => res.json())
     .then(console.log);
+
   return (
     <section className={sttyles.articles}>
       <div className={sttyles.containerSection}>

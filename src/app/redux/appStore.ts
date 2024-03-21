@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-import { widgetTopFoodApi } from '@widgets/topFood/api/widgetTopFoodApi';
-import { widgetFeedBack } from '@widgets/feedBack/api/widgetFeedBack';
+import { widgetTopFoodApi } from '@widgets/top-food/api/widgetTopFoodApi';
+import { widgetFeedBack } from '@widgets/feed-back/api/widgetFeedBack';
 
 export const store = configureStore({
   reducer: {

@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { widgetTopFoodApi } from '@widgets/topFood/api/widgetTopFoodApi';
+import { widgetTopFoodApi } from '@widgets/top-food/api/widgetTopFoodApi';
 
 export const rootReducer = combineReducers({
-  [widgetTopFoodApi.reducerPath]: widgetTopFoodApi.reducer,
+  // [widgetTopFoodApi.reducerPath]: widgetTopFoodApi.reducer,
 });

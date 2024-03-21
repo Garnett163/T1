@@ -10,6 +10,7 @@ import CommentCard from '@entities/commentCard/ui/CommentCard';
 import ErrorApi from '@shared/ui/errorApi/ErrorApi';
 import Preloader from '@shared/ui/preloader/Preloader';
 import { useGetCommentsQuery } from '../api/widgetFeedBack';
+import { START_INDEX, END_INDEX_COMMENTS } from '@shared/constants';
 
 function FeedBack() {
   const { data: commentsData, isError, isLoading } = useGetCommentsQuery();
@@ -17,7 +18,7 @@ function FeedBack() {
 
   useEffect(() => {
     if (commentsData) {
-      const sliceSixComments = commentsData.comments.slice(0, 6);
+      const sliceSixComments = commentsData.comments.slice(START_INDEX, END_INDEX_COMMENTS);
       setComments(sliceSixComments);
     } else if (isError) {
       console.log('Произошла ошибка при загрузке данных');
