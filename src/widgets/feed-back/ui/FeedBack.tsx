@@ -5,21 +5,24 @@ import './Swiper.css';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { ICommentCard } from '@entities/commentCard/model/types';
+import { IComment } from '@entities/commentCard/model/types';
 import CommentCard from '@entities/commentCard/ui/CommentCard';
 import ErrorApi from '@shared/ui/errorApi/ErrorApi';
 import Preloader from '@shared/ui/preloader/Preloader';
+import { LIMIT_COMMENTS, INITIAL_SKIP } from '@shared/constants';
 import { useGetCommentsQuery } from '../api/widgetFeedBackApi';
-import { START_INDEX, END_INDEX_COMMENTS } from '@shared/constants';
 
 function FeedBack() {
-  const { data: commentsData, isError, isLoading } = useGetCommentsQuery();
-  const [comments, setComments] = useState<ICommentCard[]>([]);
+  const {
+    data: commentsData,
+    isError,
+    isLoading,
+  } = useGetCommentsQuery({ limit: LIMIT_COMMENTS, skip: INITIAL_SKIP.toString() });
+  const [comments, setComments] = useState<IComment[]>([]);
 
   useEffect(() => {
     if (commentsData) {
-      const sliceSixComments = commentsData.comments.slice(START_INDEX, END_INDEX_COMMENTS);
-      setComments(sliceSixComments);
+      setComments(commentsData.comments);
     } else if (isError) {
       console.log('Произошла ошибка при загрузке данных');
     }
@@ -51,7 +54,7 @@ function FeedBack() {
               }}
               className={styles.swiper}
             >
-              {comments.map((comment: ICommentCard) => (
+              {comments.map((comment: IComment) => (
                 <SwiperSlide key={comment.id} className={styles.swiperSlide}>
                   <CommentCard key={comment.id} commentCard={comment} />
                 </SwiperSlide>

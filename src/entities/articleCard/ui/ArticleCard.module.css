@@ -1,6 +1,11 @@
+.articleCardLink {
+  text-decoration: none;
+}
+
 .articleCard {
   padding: 26px 24px 26px 20px;
   width: 349px;
+  height: 284px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 47px 0 rgba(197, 197, 197, 0.25);
@@ -15,6 +20,7 @@
   font-weight: 600;
   line-height: 25.18px;
   text-transform: capitalize;
+  color: #252525;
 }
 
 .containerFlex {

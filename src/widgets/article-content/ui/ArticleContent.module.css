@@ -17,30 +17,11 @@
 }
 
 .containerAuthorInfo {
-  padding-top: 32px;
+  padding-top: 37px;
   padding-bottom: 61px;
   display: flex;
   justify-content: space-between;
   gap: 16px;
-}
-
-.containerAuthor {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.writtenBy {
-  font-weight: 400;
-  font-size: 16px;
-  color: #8d8d8d;
-}
-
-.author {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 26.1px;
-  color: #000;
 }
 
 .containerRatingAndHash {
@@ -61,6 +42,11 @@
   color: #8e97a6;
 }
 
+.containerHashTags {
+  display: flex;
+  gap: 10px;
+}
+
 .hashTags {
   font-weight: 400;
   font-size: 16px;
@@ -72,7 +58,6 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 44.55px;
-  text-align: justify;
   color: #252525;
 }
 
@@ -112,7 +97,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 525px) {
   .containerSection {
     padding: 90px 15px;
   }
@@ -129,5 +114,8 @@
   .authorText {
     font-size: 16px;
     line-height: 30px;
+  }
+  .hashTags {
+    font-size: 12px;
   }
 }

@@ -9,7 +9,7 @@ function Router() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/blog" element={<BlogPage />} />
-      <Route path="/blog/article" element={<ArticlePage />} />
+      <Route path="/blog/article/:id" element={<ArticlePage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

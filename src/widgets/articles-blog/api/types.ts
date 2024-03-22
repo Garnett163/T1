@@ -1,7 +1,7 @@
-import { IArticleCard } from '@entities/articleCard/model/types';
+import { IArticle } from '@entities/articleCard/model/types';
 export type Articles = {
   limit: number | string;
-  posts: IArticleCard[];
+  posts: IArticle[];
   skip: number | string;
   total: number;
 };

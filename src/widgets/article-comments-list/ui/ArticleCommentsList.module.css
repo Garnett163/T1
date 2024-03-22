@@ -11,8 +11,37 @@
   color: #252525;
 }
 
+.commentsList {
+  padding-top: 77px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 118px;
+}
+
+.secondaryCommentCard {
+  width: 100%;
+}
+
 @media screen and (max-width: 1300px) {
   .articleCommentsList {
     padding: 0px 30px 150px 30px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .secondaryCommentCard {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .commentsList {
+    padding-top: 43px;
+    gap: 50px;
+  }
+  .articleCommentsList {
+    padding-bottom: 80px;
   }
 }

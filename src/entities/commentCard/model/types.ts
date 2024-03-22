@@ -3,7 +3,7 @@ type UserCommentCard = {
   username: string;
 };
 
-export type ICommentCard = {
+export type IComment = {
   body: string;
   id?: number;
   postId?: number;

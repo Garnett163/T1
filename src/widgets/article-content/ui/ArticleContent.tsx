@@ -1,40 +1,60 @@
 import styles from './ArticleContent.module.css';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import userAvatar from '@shared/assets/images/userAvatarArticlePage.png';
+import { IArticle } from '@entities/articleCard/model/types';
+import ArticleUser from '@entities/articleUser/ui/ArticleUser';
 import ratingIcon from '@shared/assets/svg/ratingIcon.svg';
+import Preloader from '@shared/ui/preloader/Preloader';
+import ErrorApi from '@shared/ui/errorApi/ErrorApi';
+import { useGetArticleByIdQuery } from '../api/widgetArticleContentApi';
 
-function ArticleContent() {
+interface IArticleContentProps {
+  id: string | undefined;
+}
+
+function ArticleContent({ id }: IArticleContentProps) {
+  const { data: articleData, isError, isLoading } = useGetArticleByIdQuery({ articleId: id });
+  const [article, setArticle] = useState<IArticle | null>(null);
+
+  useEffect(() => {
+    if (articleData) {
+      setArticle(articleData);
+    } else if (isError) {
+      console.log('Произошла ошибка при загрузке данных');
+    }
+  }, [articleData, isError]);
+
   return (
     <section className={styles.articleContent}>
-      <div className={styles.containerSection}>
-        <h2 className={styles.title}>How To Order Food On eatly ?</h2>
-        <div className={styles.containerAuthorInfo}>
-          <div className={styles.containerAuthor}>
-            <img src={userAvatar} alt="Аватар пользователя" />
-            <div>
-              <p className={styles.writtenBy}>Written By</p>
-              <p className={styles.author}>Terry Medhurst</p>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <div className={styles.containerSection}>
+          <h2 className={styles.title}>{article?.title}</h2>
+          <div className={styles.containerAuthorInfo}>
+            <ArticleUser userId={article?.userId} />
+            <div className={styles.containerRatingAndHash}>
+              <div className={styles.containerRating}>
+                <p className={styles.ratingNumber}>{article?.reactions}</p>
+                <img src={ratingIcon} alt="Звездочка рейтинга" />
+              </div>
+              <div className={styles.containerHashTags}>
+                {article?.tags.map((hashTag: string, index: number) => (
+                  <span className={styles.hashTags} key={index}>
+                    #{hashTag}
+                    {index !== article?.tags.length - 1 && ','}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-          <div className={styles.containerRatingAndHash}>
-            <div className={styles.containerRating}>
-              <p className={styles.ratingNumber}>7</p>
-              <img src={ratingIcon} alt="Звездочка рейтинга" />
-            </div>
-            <div>
-              <span className={styles.hashTags}>#history, #food</span>
-            </div>
-          </div>
+          <ErrorApi errorApi={isError} />
+          <p className={styles.authorText}>{article?.body}</p>
+          <Link to="/blog" className={styles.redirectOnBlog}>
+            All Articles
+          </Link>
         </div>
-        <p className={styles.authorText}>
-          It wasn't quite yet time to panic. There was still time to salvage the situation. At least that is what she
-          was telling himself. The reality was that it was time to panic and there wasn't time to salvage the situation,
-          but he continued to delude himself into believing there was.
-        </p>
-        <Link to="/blog" className={styles.redirectOnBlog}>
-          All Articles
-        </Link>
-      </div>
+      )}
     </section>
   );
 }

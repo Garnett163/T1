@@ -1,16 +1,17 @@
 import styles from './Comment.module.css';
 import commentQuote from '@shared/assets/svg/commentCardQuotes.svg';
-import { ICommentCard } from '../model/types';
+import { IComment } from '../model/types';
 
 interface CommentCardProps {
-  commentCard: ICommentCard;
+  commentCard: IComment;
+  classSecondary?: string;
 }
 
-function CommentCard({ commentCard }: CommentCardProps) {
+function CommentCard({ commentCard, classSecondary }: CommentCardProps) {
   return (
-    <li className={styles.commentCard}>
+    <li className={`${styles.commentCard} ${classSecondary || ''}`}>
       <div className={styles.containerComment}>
-        <h4 className={styles.nickName}>{commentCard.user.username}</h4>
+        <h4 className={styles.nickName}>@{commentCard.user.username}</h4>
         <img src={commentQuote} alt="Декоративные кавычки"></img>
       </div>
       <p className={styles.commentText}>{commentCard.body}</p>

@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { rootReducer } from './rootReducer';
 import { widgetTopFoodApi } from '@widgets/top-food/api/widgetTopFoodApi';
 import { widgetFeedBackApi } from '@widgets/feed-back/api/widgetFeedBackApi';
 import { widgetArticlesBlogApi } from '@widgets/articles-blog/api/widgetArticlesBlogApi';
-import { rootReducer } from './rootReducer';
+import { widgetArticleContentApi } from '@widgets/article-content/api/widgetArticleContentApi';
+import { entitiesArticleUserApi } from '@entities/articleUser/api/entitiesArticleUserApi';
+import { widgetArticleCommentsListApi } from '@widgets/article-comments-list/api/widgetArticleCommentsListApi';
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -12,6 +15,9 @@ export const store = configureStore({
       widgetTopFoodApi.middleware,
       widgetFeedBackApi.middleware,
       widgetArticlesBlogApi.middleware,
+      widgetArticleContentApi.middleware,
+      entitiesArticleUserApi.middleware,
+      widgetArticleCommentsListApi.middleware,
     ),
 });
 
