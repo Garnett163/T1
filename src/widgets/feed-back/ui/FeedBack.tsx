@@ -9,7 +9,7 @@ import { ICommentCard } from '@entities/commentCard/model/types';
 import CommentCard from '@entities/commentCard/ui/CommentCard';
 import ErrorApi from '@shared/ui/errorApi/ErrorApi';
 import Preloader from '@shared/ui/preloader/Preloader';
-import { useGetCommentsQuery } from '../api/widgetFeedBack';
+import { useGetCommentsQuery } from '../api/widgetFeedBackApi';
 import { START_INDEX, END_INDEX_COMMENTS } from '@shared/constants';
 
 function FeedBack() {
@@ -25,40 +25,41 @@ function FeedBack() {
     }
   }, [commentsData, isError]);
 
-  if (isLoading) {
-    return <Preloader />;
-  }
-
   return (
     <section className={styles.feedBack}>
       <div className={styles.containerSection}>
         <h2 className={styles.title}>
           <span className={styles.titleSpan}>Customer</span> Say
         </h2>
-        <ul className={styles.commentsList}>
-          <Swiper
-            spaceBetween={46}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            breakpoints={{
-              1440: {
-                slidesPerView: 2,
-              },
-              800: {
-                slidesPerView: 2,
-              },
-            }}
-            className={styles.swiper}
-          >
-            {comments.map((comment: ICommentCard) => (
-              <SwiperSlide key={comment.id} className={styles.swiperSlide}>
-                <CommentCard key={comment.id} commentCard={comment} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </ul>
+        {isLoading ? (
+          <Preloader />
+        ) : (
+          <ul className={styles.commentsList}>
+            <Swiper
+              spaceBetween={46}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              breakpoints={{
+                1440: {
+                  slidesPerView: 2,
+                },
+                800: {
+                  slidesPerView: 2,
+                },
+              }}
+              className={styles.swiper}
+            >
+              {comments.map((comment: ICommentCard) => (
+                <SwiperSlide key={comment.id} className={styles.swiperSlide}>
+                  <CommentCard key={comment.id} commentCard={comment} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </ul>
+        )}
+
         <ErrorApi errorApi={isError} />
       </div>
     </section>

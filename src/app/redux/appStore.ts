@@ -1,14 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { widgetTopFoodApi } from '@widgets/top-food/api/widgetTopFoodApi';
-import { widgetFeedBack } from '@widgets/feed-back/api/widgetFeedBack';
+import { widgetFeedBackApi } from '@widgets/feed-back/api/widgetFeedBackApi';
+import { widgetArticlesBlogApi } from '@widgets/articles-blog/api/widgetArticlesBlogApi';
+import { rootReducer } from './rootReducer';
 
 export const store = configureStore({
-  reducer: {
-    [widgetTopFoodApi.reducerPath]: widgetTopFoodApi.reducer,
-    [widgetFeedBack.reducerPath]: widgetFeedBack.reducer,
-  },
+  reducer: rootReducer,
+  devTools: true,
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(widgetTopFoodApi.middleware, widgetFeedBack.middleware),
+    getDefaultMiddleware().concat(
+      widgetTopFoodApi.middleware,
+      widgetFeedBackApi.middleware,
+      widgetArticlesBlogApi.middleware,
+    ),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,0 +1,18 @@
+.articleCommentsList {
+  margin: 0 auto;
+  padding-bottom: 196px;
+  max-width: 1196px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 44.55px;
+  color: #252525;
+}
+
+@media screen and (max-width: 1300px) {
+  .articleCommentsList {
+    padding: 0px 30px 150px 30px;
+  }
+}

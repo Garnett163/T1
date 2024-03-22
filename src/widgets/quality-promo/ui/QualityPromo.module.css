@@ -20,6 +20,12 @@
   gap: 25px;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 .title {
   padding-bottom: 41px;
   width: 520px;

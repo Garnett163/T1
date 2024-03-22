@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Comments } from './types';
 
-export const widgetFeedBack = createApi({
-  reducerPath: 'widgetFeedBack',
+export const widgetFeedBackApi = createApi({
+  reducerPath: 'widgetFeedBackApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com' }),
   endpoints: builder => ({
     getComments: builder.query<Comments, void>({
@@ -11,4 +11,4 @@ export const widgetFeedBack = createApi({
   }),
 });
 
-export const { useGetCommentsQuery } = widgetFeedBack;
+export const { useGetCommentsQuery } = widgetFeedBackApi;

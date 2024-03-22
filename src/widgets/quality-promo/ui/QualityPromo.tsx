@@ -12,12 +12,14 @@ function QualityPromo() {
           <h2 className={styles.title}>
             Premium <span className={styles.titleSpan}>Quality</span> For Your Health
           </h2>
-          <p className={styles.description}>
-            Premium quality food is made with ingredients that are packed with essential vitamins, minerals.
-          </p>
-          <p className={styles.description}>
-            These foods promote overall wellness by support healthy digestion and boosting immunity
-          </p>
+          <ul className={styles.list}>
+            <li className={styles.description}>
+              Premium quality food is made with ingredients that are packed with essential vitamins, minerals.
+            </li>
+            <li className={styles.description}>
+              These foods promote overall wellness by support healthy digestion and boosting immunity
+            </li>
+          </ul>
           <div className={styles.containerBtn}>
             <Button textBtn="Download" classSecondary={styles.classBtnSecondary} ariaLabel='Кнопка "Download"' />
             <img src={arrowTopFood} alt="Декоротивная стрелка" className={styles.arrowTopFood} />

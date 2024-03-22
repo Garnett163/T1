@@ -1,7 +1,6 @@
 .articleCard {
   padding: 26px 24px 26px 20px;
   width: 349px;
-  height: 236px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 47px 0 rgba(197, 197, 197, 0.25);
@@ -31,6 +30,11 @@
   gap: 4px;
 }
 
+.containerHashTags {
+  display: flex;
+  gap: 5px;
+}
+
 .hashTags {
   font-size: 12px;
   font-weight: 400;
@@ -50,8 +54,12 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 26.12px;
-  text-align: justify;
   color: #081420;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
 }
 
 @media screen and (max-width: 560px) {

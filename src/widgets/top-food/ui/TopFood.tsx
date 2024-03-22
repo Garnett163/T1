@@ -22,28 +22,29 @@ function TopFood() {
     }
   }, [isError, recipesData]);
 
-  if (isLoading) {
-    return <Preloader />;
-  }
-
   return (
     <section className={styles.topFood} id="recipes">
       <div className={styles.containerSection}>
         <h2 className={styles.title}>
           Our Top <span className={styles.titleSpan}>Lunch</span>
         </h2>
-        <ul className={styles.foodCardsList}>
-          {foodCards.map((foodCard: IFoodCard) => (
-            <FoodCard
-              key={foodCard.id}
-              title={foodCard.name}
-              rating={foodCard.rating}
-              time={foodCard.cookTimeMinutes}
-              typeFood={foodCard.mealType}
-              srcImage={foodCard.image}
-            />
-          ))}
-        </ul>
+        {isLoading ? (
+          <Preloader />
+        ) : (
+          <ul className={styles.foodCardsList}>
+            {foodCards.map((foodCard: IFoodCard) => (
+              <FoodCard
+                key={foodCard.id}
+                title={foodCard.name}
+                rating={foodCard.rating}
+                time={foodCard.cookTimeMinutes}
+                typeFood={foodCard.mealType}
+                srcImage={foodCard.image}
+              />
+            ))}
+          </ul>
+        )}
+
         <ErrorApi errorApi={isError} />
       </div>
     </section>
