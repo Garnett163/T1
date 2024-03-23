@@ -20,7 +20,7 @@ function FaqCard({ title, answer }: FaqCardProps) {
         <h3 className={styles.title}>{title}</h3>
         <Button
           classSecondary={`${isExpanded ? styles.buttonToggleMinus : styles.buttonTogglePlus}`}
-          ariaLabel="Кнопка переключения раскрытия вопроса"
+          ariaLabel="Button for Question expansion toggle"
         />
       </div>
       <p className={`${styles.answer} ${isExpanded ? styles.expanded : ''}`}>{answer}</p>

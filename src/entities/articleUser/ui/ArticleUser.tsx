@@ -15,11 +15,11 @@ function ArticleUser({ userId }: ArticleUserProps) {
         <PreloaderUserAvatar />
       ) : (
         <>
-          <img src={userData?.image || userAvatar} alt="Аватар пользователя" className={styles.userAvatar} />
+          <img src={userData?.image || userAvatar} alt="Avatar user" className={styles.userAvatar} />
           <div>
             <p className={styles.writtenBy}>Written By</p>
             <p className={styles.author}>
-              <span>{userData?.firstName || 'Машуля'}</span> <span>{userData?.lastName || 'Иванова'}</span>
+              <span>{userData?.firstName || 'Maria'}</span> <span>{userData?.lastName || 'Ivanova'}</span>
             </p>
           </div>
         </>

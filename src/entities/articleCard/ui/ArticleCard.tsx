@@ -28,7 +28,7 @@ function ArticleCard({ id, title, hashTags, rating, description }: ArticleCardPr
           </div>
           <div className={styles.containerRating}>
             <p className={styles.rating}>{rating}</p>
-            <img src={ratingIcon} alt="Звездочка рейтинга" className={styles.ratingIcon} />
+            <img src={ratingIcon} alt="Star rating" className={styles.ratingIcon} />
           </div>
         </div>
         <p className={styles.description}>{smartCutText(description, MAX_DESCRIPTION_LENGTH)}</p>

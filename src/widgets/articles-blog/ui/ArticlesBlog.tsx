@@ -60,11 +60,13 @@ function ArticlesBlog() {
                 className={`${styles.paginationBtn} ${styles.prevPageBtn}`}
                 onClick={handlePrevPage}
                 disabled={INITIAL_SKIP === skipPages}
+                aria-label='Button "Previous page"'
               />
               <button
                 className={`${styles.paginationBtn} ${styles.nextPageBtn}`}
                 onClick={handleNextPage}
                 disabled={articles.length < +LIMIT_PER_PAGE}
+                aria-label='Button "Next page"'
               />
             </div>
           </>

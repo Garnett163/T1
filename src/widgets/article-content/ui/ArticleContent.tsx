@@ -36,7 +36,7 @@ function ArticleContent({ id }: IArticleContentProps) {
             <div className={styles.containerRatingAndHash}>
               <div className={styles.containerRating}>
                 <p className={styles.ratingNumber}>{article?.reactions}</p>
-                <img src={ratingIcon} alt="Звездочка рейтинга" />
+                <img src={ratingIcon} alt="Star rating" />
               </div>
               <div className={styles.containerHashTags}>
                 {article?.tags.map((hashTag: string, index: number) => (
@@ -50,7 +50,7 @@ function ArticleContent({ id }: IArticleContentProps) {
           </div>
           <ErrorApi errorApi={isError} />
           <p className={styles.authorText}>{article?.body}</p>
-          <Link to="/blog" className={styles.redirectOnBlog}>
+          <Link to="/blog" className={styles.redirectOnBlog} aria-label="Go to blog page">
             All Articles
           </Link>
         </div>

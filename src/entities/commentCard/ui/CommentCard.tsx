@@ -12,7 +12,7 @@ function CommentCard({ commentCard, classSecondary }: CommentCardProps) {
     <li className={`${styles.commentCard} ${classSecondary || ''}`}>
       <div className={styles.containerComment}>
         <h4 className={styles.nickName}>@{commentCard.user.username}</h4>
-        <img src={commentQuote} alt="Декоративные кавычки"></img>
+        <img src={commentQuote} alt="Decorative quotes"></img>
       </div>
       <p className={styles.commentText}>{commentCard.body}</p>
     </li>

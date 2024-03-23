@@ -9,7 +9,7 @@ interface LogoProps {
 function Logo({ classSecondary }: LogoProps) {
   return (
     <Link to="/">
-      <img className={`${styles.logo} ${classSecondary || ''}`} src={logo} />
+      <img className={`${styles.logo} ${classSecondary || ''}`} src={logo} alt="Logo" />
     </Link>
   );
 }

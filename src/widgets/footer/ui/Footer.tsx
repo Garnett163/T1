@@ -18,10 +18,10 @@ function Footer() {
           <p className={styles.copyright}>© 2023 EATLY All Rights Reserved.</p>
           <nav>
             <ul className={styles.listIcons}>
-              <img src={instagramIcon} alt="Иконка Инстаграма"></img>
-              <img src={linkedinIcon} alt="Иконка Линкедин"></img>
-              <img src={facebookIcon} alt="Иконка Фейсбук"></img>
-              <img src={twitterIcon} alt="Иконка Твиттер"></img>
+              <img src={instagramIcon} alt="Instagram Icon"></img>
+              <img src={linkedinIcon} alt="linkedin Icon"></img>
+              <img src={facebookIcon} alt="Facebook Icon"></img>
+              <img src={twitterIcon} alt="Twitter Icon"></img>
             </ul>
           </nav>
         </div>
