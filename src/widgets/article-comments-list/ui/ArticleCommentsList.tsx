@@ -4,6 +4,7 @@ import { IComment } from '@entities/commentCard/model/types';
 import CommentCard from '@entities/commentCard/ui/CommentCard';
 import Preloader from '@shared/ui/preloader/Preloader';
 import ErrorApi from '@shared/ui/errorApi/ErrorApi';
+import AddComment from '@features/add-comment/ui/AddComment';
 import { useGetCommentsByPostIdQuery } from '../api/widgetArticleCommentsListApi';
 
 interface ArticleCommentsListProps {
@@ -34,7 +35,8 @@ function ArticleCommentsList({ id }: ArticleCommentsListProps) {
           ))}
         </ul>
       )}
-      <ErrorApi errorApi={isError} />
+      <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
+      <AddComment id={id} comments={comments} setComments={setComments} />
     </section>
   );
 }

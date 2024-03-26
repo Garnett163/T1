@@ -48,7 +48,7 @@ function ArticleContent({ id }: IArticleContentProps) {
               </div>
             </div>
           </div>
-          <ErrorApi errorApi={isError} />
+          <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
           <p className={styles.authorText}>{article?.body}</p>
           <Link to="/blog" className={styles.redirectOnBlog} aria-label="Go to blog page">
             All Articles

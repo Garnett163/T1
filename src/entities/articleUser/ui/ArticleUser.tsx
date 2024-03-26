@@ -4,22 +4,29 @@ import userAvatar from '@shared/assets/images/userAvatarArticlePage.png';
 import { useGetUserByIdQuery } from '../api/entitiesArticleUserApi';
 
 interface ArticleUserProps {
-  userId: number | undefined;
+  userId?: number | undefined;
+  classArticleBlog?: boolean;
 }
-function ArticleUser({ userId }: ArticleUserProps) {
-  const { data: userData, isLoading } = useGetUserByIdQuery({ id: userId?.toString() });
+function ArticleUser({ userId, classArticleBlog }: ArticleUserProps) {
+  const { data: userData, isLoading } = useGetUserByIdQuery({ id: userId?.toString() }, { skip: !userId });
 
   return (
     <div className={styles.containerAuthor}>
       {isLoading ? (
-        <PreloaderUserAvatar />
+        <PreloaderUserAvatar classArticleBlog={classArticleBlog} />
       ) : (
         <>
-          <img src={userData?.image || userAvatar} alt="Avatar user" className={styles.userAvatar} />
+          <img
+            src={userData?.image || userAvatar}
+            alt="Avatar user"
+            className={`${classArticleBlog ? `${styles.userAvatar} ${styles.userAvatarBlog}` : styles.userAvatar}`}
+          />
           <div>
-            <p className={styles.writtenBy}>Written By</p>
-            <p className={styles.author}>
-              <span>{userData?.firstName || 'Maria'}</span> <span>{userData?.lastName || 'Ivanova'}</span>
+            <p className={`${classArticleBlog ? `${styles.writtenBy} ${styles.writtenByBlog}` : styles.writtenBy}`}>
+              Written By
+            </p>
+            <p className={`${classArticleBlog ? `${styles.author} ${styles.authorBlog}` : styles.author}`}>
+              <span>{userData?.firstName || 'Mashulya'}</span> <span>{userData?.lastName || 'Ivanova'}</span>
             </p>
           </div>
         </>

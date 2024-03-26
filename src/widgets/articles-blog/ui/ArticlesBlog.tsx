@@ -52,6 +52,7 @@ function ArticlesBlog() {
                   hashTags={article.tags}
                   rating={article.reactions}
                   description={article.body}
+                  userId={article.userId}
                 />
               ))}
             </ul>
@@ -71,7 +72,7 @@ function ArticlesBlog() {
             </div>
           </>
         )}
-        <ErrorApi errorApi={isError} />
+        <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
       </div>
     </section>
   );

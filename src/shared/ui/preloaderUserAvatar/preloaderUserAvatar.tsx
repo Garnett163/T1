@@ -1,7 +1,11 @@
 import styles from './preloaderUserAvatar.module.css';
 
-function preloaderUserAvatar() {
-  return <div className={styles.loader}>loading</div>;
+interface PreloaderUserAvatarProps {
+  classArticleBlog?: boolean;
+}
+
+function preloaderUserAvatar({ classArticleBlog }: PreloaderUserAvatarProps) {
+  return <div className={`${classArticleBlog ? `${styles.loader} ${styles.loaderBlog}` : styles.loader}`}>loading</div>;
 }
 
 export default preloaderUserAvatar;
