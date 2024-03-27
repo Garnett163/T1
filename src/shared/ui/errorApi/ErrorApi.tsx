@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './ErrorApi.module.css';
 
 interface ErrorApiProps {
@@ -6,6 +7,9 @@ interface ErrorApiProps {
 }
 
 function ErrorApi({ errorApi, textErrorApi }: ErrorApiProps) {
+  if (!errorApi) {
+    return null;
+  }
   return <span className={styles.errorApi}>{`${errorApi ? textErrorApi : ''}`}</span>;
 }
 

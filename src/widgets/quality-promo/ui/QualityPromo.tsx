@@ -2,6 +2,7 @@ import Button from '@shared/ui/button/Button';
 import styles from './QualityPromo.module.css';
 import mobilePhoto from '@shared/assets/images/mobilePhoto.png';
 import arrowTopFood from '@shared/assets/svg/arrowTopFood.svg';
+import React from 'react';
 
 function QualityPromo() {
   return (

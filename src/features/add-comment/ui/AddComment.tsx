@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from '@shared/ui/button/Button';
 import { useState } from 'react';
 import styles from './AddComment.module.css';
