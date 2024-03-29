@@ -35,6 +35,7 @@ function AddComment({ id, setComments, comments }: AddCommentProps) {
   function handleTextAreaChange(evt: React.ChangeEvent<HTMLTextAreaElement>) {
     setNewComment(prev => ({ ...prev, body: evt.target.value }));
   }
+
   return (
     <div className={styles.addComment}>
       <h3 className={styles.title}>
