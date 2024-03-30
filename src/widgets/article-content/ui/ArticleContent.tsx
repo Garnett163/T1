@@ -1,3 +1,4 @@
+import ErrorApi from '@shared/ui/errorApi/ErrorApi';
 import styles from './ArticleContent.module.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -5,7 +6,6 @@ import { IArticle } from '@entities/articleCard/model/types';
 import ArticleUser from '@entities/articleUser/ui/ArticleUser';
 import ratingIcon from '@shared/assets/svg/ratingIcon.svg';
 import Preloader from '@shared/ui/preloader/Preloader';
-import ErrorApi from '@shared/ui/errorApi/ErrorApi';
 import { useGetArticleByIdQuery } from '../api/widgetArticleContentApi';
 
 interface IArticleContentProps {
@@ -24,6 +24,8 @@ function ArticleContent({ id }: IArticleContentProps) {
     }
   }, [articleData, isError]);
 
+  if (isError) return <ErrorApi errorApi={isError} textErrorApi="Post not found" classSecondary={styles.errorApiTwo} />;
+
   return (
     <section className={styles.articleContent}>
       {isLoading ? (
@@ -31,6 +33,7 @@ function ArticleContent({ id }: IArticleContentProps) {
       ) : (
         <div className={styles.containerSection}>
           <h2 className={styles.title}>{article?.title}</h2>
+          <ErrorApi errorApi={isError} textErrorApi="Post not found" />
           <div className={styles.containerAuthorInfo}>
             <ArticleUser userId={article?.userId} />
             <div className={styles.containerRatingAndHash}>
@@ -48,7 +51,6 @@ function ArticleContent({ id }: IArticleContentProps) {
               </div>
             </div>
           </div>
-          <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
           <p className={styles.authorText}>{article?.body}</p>
           <Link to="/blog" className={styles.redirectOnBlog} aria-label="Go to blog page">
             All Articles

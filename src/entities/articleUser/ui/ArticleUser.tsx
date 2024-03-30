@@ -1,6 +1,7 @@
 import styles from './ArticleUser.module.css';
 import PreloaderUserAvatar from '@shared/ui/preloaderUserAvatar/preloaderUserAvatar';
 import userAvatar from '@shared/assets/images/userAvatarArticlePage.png';
+import ErrorApi from '@shared/ui/errorApi/ErrorApi';
 import { useGetUserByIdQuery } from '../api/entitiesArticleUserApi';
 
 interface ArticleUserProps {
@@ -8,7 +9,9 @@ interface ArticleUserProps {
   classArticleBlog?: boolean;
 }
 function ArticleUser({ userId, classArticleBlog }: ArticleUserProps) {
-  const { data: userData, isLoading } = useGetUserByIdQuery({ id: userId?.toString() }, { skip: !userId });
+  const { data: userData, isLoading, isError } = useGetUserByIdQuery({ id: userId?.toString() }, { skip: !userId });
+
+  if (isError) return <ErrorApi errorApi={isError} textErrorApi="User not found" />;
 
   return (
     <div className={styles.containerAuthor}>
@@ -26,7 +29,7 @@ function ArticleUser({ userId, classArticleBlog }: ArticleUserProps) {
               Written By
             </p>
             <p className={`${classArticleBlog ? `${styles.author} ${styles.authorBlog}` : styles.author}`}>
-              <span>{userData?.firstName || 'Mashulya'}</span> <span>{userData?.lastName || 'Ivanova'}</span>
+              <span>{userData?.firstName}</span> <span>{userData?.lastName}</span>
             </p>
           </div>
         </>

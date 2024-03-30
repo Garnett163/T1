@@ -56,6 +56,7 @@ function ArticlesBlog() {
                 />
               ))}
             </ul>
+            <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
             <div className={styles.containerPagination}>
               <button
                 className={`${styles.paginationBtn} ${styles.prevPageBtn}`}
@@ -72,7 +73,6 @@ function ArticlesBlog() {
             </div>
           </>
         )}
-        <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
       </div>
     </section>
   );

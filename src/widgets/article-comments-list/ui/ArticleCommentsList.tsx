@@ -25,15 +25,17 @@ function ArticleCommentsList({ id }: ArticleCommentsListProps) {
 
   return (
     <section className={styles.articleCommentsList}>
-      <h3 className={styles.title}>Comments</h3>
       {isLoading ? (
         <Preloader />
       ) : (
-        <ul className={styles.commentsList}>
-          {comments.map(comment => (
-            <CommentCard key={comment.id} commentCard={comment} classSecondary={styles.secondaryCommentCard} />
-          ))}
-        </ul>
+        <>
+          <h3 className={styles.title}>Comments</h3>
+          <ul className={styles.commentsList}>
+            {comments.map(comment => (
+              <CommentCard key={comment.id} commentCard={comment} classSecondary={styles.secondaryCommentCard} />
+            ))}
+          </ul>
+        </>
       )}
       <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
       <AddComment id={id} comments={comments} setComments={setComments} />

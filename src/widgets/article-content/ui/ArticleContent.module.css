@@ -87,6 +87,10 @@
   height: 34px;
 }
 
+.errorApiTwo {
+  padding-top: 50px;
+}
+
 .redirectOnBlog:hover {
   opacity: 0.8;
 }
