@@ -2,8 +2,7 @@ import ArticleUser from '@entities/articleUser/ui/ArticleUser';
 import styles from './ArticleCard.module.css';
 import ratingIcon from '@shared/assets/svg/ratingIcon.svg';
 import { Link } from 'react-router-dom';
-import { MAX_DESCRIPTION_LENGTH } from '@shared/constants';
-import { smartCutText } from '@shared/lib/helpers';
+import ClampLines from 'react-clamp-lines';
 
 interface ArticleCardProps {
   id?: number;
@@ -34,7 +33,16 @@ function ArticleCard({ id, title, hashTags, rating, description, userId }: Artic
             </span>
           ))}
         </div>
-        <p className={styles.description}>{smartCutText(description, MAX_DESCRIPTION_LENGTH)}</p>
+        {/* <p className={styles.description}>{smartCutText(description, MAX_DESCRIPTION_LENGTH)}</p> */}
+        <ClampLines
+          id="blog-description"
+          text={description}
+          className={styles.description}
+          lines={3}
+          ellipsis="..."
+          innerElement="p"
+          lessText="Collapse"
+        />
       </li>
     </Link>
   );
