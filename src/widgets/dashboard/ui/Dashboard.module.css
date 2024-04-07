@@ -1,0 +1,89 @@
+.dashboard {
+  background-color: #f9f9f9;
+}
+
+.containerSection {
+  padding-top: 136px;
+  padding-bottom: 132px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1246px;
+  border-bottom: 1px solid #cbcbcb;
+}
+
+.containerPL {
+  padding-left: 13px;
+}
+
+.title {
+  padding-left: 11px;
+  padding-bottom: 47px;
+  width: 560px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 58.2px;
+  color: #18181b;
+}
+
+.titleSpan {
+  color: #6c5fbc;
+}
+
+.deliveryCardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  list-style: none;
+  max-width: 330px;
+}
+
+.purchasesDashboard {
+  margin: -7px -12px;
+  width: 534px;
+  height: 458px;
+}
+
+@media screen and (max-width: 1300px) {
+  .containerSection {
+    padding: 70px 25px;
+    align-items: center;
+  }
+  .purchasesDashboard {
+    width: 360px;
+    height: 330px;
+  }
+  .title {
+    font-size: 36px;
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .containerSection {
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 40px;
+  }
+  .deliveryCardsList {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    max-width: 250px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .deliveryCardsList {
+    max-width: none;
+    width: 100%;
+  }
+  .purchasesDashboard {
+    width: 100%;
+    height: 100%;
+  }
+}

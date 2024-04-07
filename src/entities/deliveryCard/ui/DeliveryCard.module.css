@@ -1,0 +1,75 @@
+.deliveryCard {
+  padding: 8px 15px 8px 15px;
+  min-width: 330px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  box-shadow: -10px 12px 21px 0 rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.img {
+  border-radius: 16px;
+  width: 75px;
+  height: 75px;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  width: 105px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #323142;
+}
+
+.status {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  color: #323142;
+}
+
+.cancelled {
+  color: #fb471d;
+}
+
+.time {
+  margin-bottom: 6px;
+  margin-right: 8px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  align-self: end;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  text-align: right;
+  color: #acadb9;
+}
+
+@media screen and (max-width: 1350px) {
+  .deliveryCard {
+    min-width: 0;
+    justify-content: space-between;
+  }
+  .time {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .deliveryCard {
+    gap: 10px;
+  }
+  .title {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+  .img {
+    width: 40px;
+    height: 40px;
+  }
+}
