@@ -39,7 +39,7 @@ function Dashboard() {
         </div>
         <img
           src={purchasesDashboard}
-          alt="Изображение панели доставки приложения"
+          alt="Application delivery panel image"
           className={styles.purchasesDashboard}
           loading="lazy"
         ></img>

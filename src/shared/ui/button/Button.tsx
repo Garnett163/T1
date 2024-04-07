@@ -5,11 +5,17 @@ interface ButtonProps {
   classSecondary?: string;
   handleClick?: () => void;
   ariaLabel?: string;
+  disabled?: boolean;
 }
 
-function Button({ textBtn, classSecondary, handleClick, ariaLabel }: ButtonProps) {
+function Button({ textBtn, classSecondary, handleClick, ariaLabel, disabled }: ButtonProps) {
   return (
-    <button className={`${styles.button} ${classSecondary || ''}`} onClick={handleClick} aria-label={ariaLabel}>
+    <button
+      className={`${styles.button} ${classSecondary || ''}`}
+      onClick={handleClick}
+      aria-label={ariaLabel}
+      disabled={disabled}
+    >
       {textBtn}
     </button>
   );

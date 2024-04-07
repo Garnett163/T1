@@ -1,17 +1,17 @@
-import styles from './HomePage.module.css';
+import DivPage from '@shared/ui/div-page/DivPage';
 import Header from '@widgets/header/ui/Header';
 import Promo from '@widgets/promo/ui/Promo';
 import Statistics from '@widgets/statistics/ui/Statistics';
-import QualityPromo from '@widgets/qualityPromo/ui/QualityPromo';
-import TopFood from '@widgets/topFood/ui/TopFood';
+import QualityPromo from '@widgets/quality-promo/ui/QualityPromo';
+import TopFood from '@widgets/top-food/ui/TopFood';
 import Dashboard from '@widgets/dashboard/ui/Dashboard';
-import FeedBack from '@widgets/feedBack/ui/FeedBack';
+import FeedBack from '@widgets/feed-back/ui/FeedBack';
 import Faq from '@widgets/faq/ui/Faq';
 import Footer from '@widgets/footer/ui/Footer';
 
 function HomePage() {
   return (
-    <div className={styles.page}>
+    <DivPage>
       <Header />
       <main>
         <Promo />
@@ -23,7 +23,7 @@ function HomePage() {
         <Faq />
       </main>
       <Footer />
-    </div>
+    </DivPage>
   );
 }
 

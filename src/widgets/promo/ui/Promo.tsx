@@ -22,12 +22,12 @@ function Promo() {
             <span className={styles.descriptionSpan}>$20&nbsp;bonus</span>.
           </p>
           <div className={styles.containerBtns}>
-            <Button textBtn="Get Started" ariaLabel='Кнопка "Get Started"' />
-            <Button textBtn="Go Pro" classSecondary={styles.classBtnSecondary} ariaLabel='Кнопка "Go Pro"' />
+            <Button textBtn="Get Started" ariaLabel='Button "Get Started"' />
+            <Button textBtn="Go Pro" classSecondary={styles.classBtnSecondary} ariaLabel='Button "Go Pro"' />
           </div>
         </article>
         <div className={styles.containerFood}>
-          <img src={plateFood} alt="Тарелка с едой" className={styles.plateFood} />
+          <img src={plateFood} alt="Plate of food" className={styles.plateFood} />
           <DeliveryCard
             srcImage={deliveryFoodImage}
             title="Chicken Hell"
@@ -35,10 +35,10 @@ function Promo() {
             time="3:09 PM"
             classSecondary={styles.deliveryCard}
           />
-          <img src={graphicDeliveryFood} alt="График доставки еды" className={styles.graphicFood} />
-          <img src={arrowPromo} alt="Декоротивная стрелка" className={styles.arrowPromo} />
-          <img src={linesPromoBot} alt="Декоротивные полоски" className={styles.linesPromoBot} />
-          <img src={linesPromoTop} alt="Декоротивные полоски" className={styles.linesPromoTop} />
+          <img src={graphicDeliveryFood} alt="Food delivery schedule" className={styles.graphicFood} />
+          <img src={arrowPromo} alt="Decorative arrow" className={styles.arrowPromo} />
+          <img src={linesPromoBot} alt="Decorative lines" className={styles.linesPromoBot} />
+          <img src={linesPromoTop} alt="Decorative lines" className={styles.linesPromoTop} />
         </div>
       </div>
     </section>

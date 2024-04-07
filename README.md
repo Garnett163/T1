@@ -1,6 +1,10 @@
-## Запуск проекта
+# Project T1
 
 [Макет Проекта](https://www.figma.com/file/TjRJ7LLNtMTWGAt13VWqCw/2-задание%3A-вёрстка-%2B-React?type=design&node-id=1-2&mode=design&t=2lk79ibXvQKCvzwA-0)
+
+## Запуск проекта
+
+Структура - Feature-Sliced Design
 
 Для запуска проекта необходимо выполнить следующие действия:
 

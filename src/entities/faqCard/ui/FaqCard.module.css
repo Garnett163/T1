@@ -1,6 +1,7 @@
 .faqCard {
   width: 100%;
   border-bottom: 1.06px solid #adadad;
+  cursor: pointer;
 }
 
 .title {

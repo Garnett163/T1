@@ -17,6 +17,10 @@
   font-size: 18px;
 }
 
+.link:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 500px) {
   .list {
     gap: 20px;

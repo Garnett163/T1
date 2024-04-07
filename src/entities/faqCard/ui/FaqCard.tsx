@@ -16,13 +16,12 @@ function FaqCard({ title, answer }: FaqCardProps) {
 
   return (
     <li className={styles.faqCard}>
-      <div className={styles.containerFlex}>
+      <div className={styles.containerFlex} onClick={toggleExpansion}>
         <h3 className={styles.title}>{title}</h3>
         <Button
           classSecondary={`${isExpanded ? styles.buttonToggleMinus : styles.buttonTogglePlus}`}
-          handleClick={toggleExpansion}
-          ariaLabel="Кнопка переключения раскрытия вопроса"
-        ></Button>
+          ariaLabel="Button for Question expansion toggle"
+        />
       </div>
       <p className={`${styles.answer} ${isExpanded ? styles.expanded : ''}`}>{answer}</p>
     </li>

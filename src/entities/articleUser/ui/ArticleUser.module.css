@@ -1,0 +1,30 @@
+.containerAuthor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userAvatar {
+  width: 54px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.writtenBy {
+  font-weight: 400;
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+.author {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26.1px;
+  color: #000;
+}
+
+@media screen and (max-width: 1300px) {
+  .containerSection {
+    padding: 90px 30px;
+  }
+}
