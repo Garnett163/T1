@@ -5,7 +5,7 @@
 .articleCard {
   padding: 26px 24px 26px 20px;
   width: 349px;
-  height: 284px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 47px 0 rgba(197, 197, 197, 0.25);
@@ -15,7 +15,7 @@
 }
 
 .title {
-  padding-bottom: 28px;
+  padding-bottom: 19px;
   font-size: 20px;
   font-weight: 600;
   line-height: 25.18px;
@@ -23,8 +23,8 @@
   color: #252525;
 }
 
-.containerFlex {
-  padding-bottom: 23px;
+.containerFlexUser {
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +37,7 @@
 }
 
 .containerHashTags {
+  padding-bottom: 19px;
   display: flex;
   gap: 5px;
 }
@@ -62,10 +63,10 @@
   line-height: 26.12px;
   color: #081420;
 
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 3; */
 }
 
 @media screen and (max-width: 560px) {

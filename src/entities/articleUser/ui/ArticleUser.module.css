@@ -9,11 +9,18 @@
   height: 56px;
   border-radius: 50%;
 }
+.userAvatarBlog {
+  width: 41px;
+  height: 41px;
+}
 
 .writtenBy {
   font-weight: 400;
   font-size: 16px;
   color: #8d8d8d;
+}
+.writtenByBlog {
+  font-size: 14px;
 }
 
 .author {
@@ -21,6 +28,9 @@
   font-size: 18px;
   line-height: 26.1px;
   color: #000;
+}
+.authorBlog {
+  font-size: 16px;
 }
 
 @media screen and (max-width: 1300px) {

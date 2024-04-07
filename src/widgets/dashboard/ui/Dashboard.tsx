@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Dashboard.module.css';
 import DeliveryCard from '@entities/deliveryCard/ui/DeliveryCard';
 import deliveryFoodImage from '@shared/assets/images/deliveryFood.png';
@@ -42,7 +43,7 @@ function Dashboard() {
           alt="Application delivery panel image"
           className={styles.purchasesDashboard}
           loading="lazy"
-        ></img>
+        />
       </div>
     </section>
   );

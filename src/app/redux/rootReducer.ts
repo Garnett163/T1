@@ -5,6 +5,7 @@ import { widgetArticlesBlogApi } from '@widgets/articles-blog/api/widgetArticles
 import { widgetArticleContentApi } from '@widgets/article-content/api/widgetArticleContentApi';
 import { entitiesArticleUserApi } from '@entities/articleUser/api/entitiesArticleUserApi';
 import { widgetArticleCommentsListApi } from '@widgets/article-comments-list/api/widgetArticleCommentsListApi';
+import { featuresAddCommentApi } from '@features/add-comment/api/featuresAddCommentApi';
 
 export const rootReducer = combineReducers({
   [widgetTopFoodApi.reducerPath]: widgetTopFoodApi.reducer,
@@ -13,4 +14,5 @@ export const rootReducer = combineReducers({
   [widgetArticleContentApi.reducerPath]: widgetArticleContentApi.reducer,
   [entitiesArticleUserApi.reducerPath]: entitiesArticleUserApi.reducer,
   [widgetArticleCommentsListApi.reducerPath]: widgetArticleCommentsListApi.reducer,
+  [featuresAddCommentApi.reducerPath]: featuresAddCommentApi.reducer,
 });

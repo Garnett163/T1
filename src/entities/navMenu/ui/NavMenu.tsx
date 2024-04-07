@@ -1,5 +1,6 @@
 import styles from './NavMenu.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
 
 interface NavMenuProps {
   listClassTwo?: string;
@@ -7,6 +8,8 @@ interface NavMenuProps {
 }
 
 function NavMenu({ listClassTwo, linkClassTwo }: NavMenuProps) {
+  const location = useLocation();
+  const isBlogPage = location.pathname.startsWith('/blog');
   const handleSmoothScroll = (evt: React.MouseEvent<HTMLAnchorElement>) => {
     evt.preventDefault();
 
@@ -23,16 +26,20 @@ function NavMenu({ listClassTwo, linkClassTwo }: NavMenuProps) {
   return (
     <nav className={styles.nav}>
       <ul className={`${styles.list} ${listClassTwo || ''}`}>
-        <li>
-          <a className={`${styles.link} ${linkClassTwo || ''}`} href="#recipes" onClick={handleSmoothScroll}>
-            Recipes
-          </a>
-        </li>
-        <li>
-          <a className={`${styles.link} ${linkClassTwo || ''}`} href="#faq" onClick={handleSmoothScroll}>
-            FAQ
-          </a>
-        </li>
+        {!isBlogPage && (
+          <>
+            <li>
+              <a className={`${styles.link} ${linkClassTwo || ''}`} href="#recipes" onClick={handleSmoothScroll}>
+                Recipes
+              </a>
+            </li>
+            <li>
+              <a className={`${styles.link} ${linkClassTwo || ''}`} href="#faq" onClick={handleSmoothScroll}>
+                FAQ
+              </a>
+            </li>
+          </>
+        )}
         <li>
           <Link className={`${styles.link} ${linkClassTwo || ''}`} to="/blog">
             Blog

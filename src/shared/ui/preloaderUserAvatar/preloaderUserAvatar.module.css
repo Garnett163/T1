@@ -19,6 +19,13 @@
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
+
+.loaderBlog {
+  margin: 0;
+  width: 4em;
+  height: 4em;
+}
+
 .loader:before {
   width: 50%;
   height: 50%;

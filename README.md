@@ -25,3 +25,9 @@ npm install или npm i
 ```
 npm run dev
 ```
+
+Запустить тесты
+
+```
+npm test
+```

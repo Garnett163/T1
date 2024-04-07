@@ -45,7 +45,7 @@ function TopFood() {
           </ul>
         )}
 
-        <ErrorApi errorApi={isError} />
+        <ErrorApi errorApi={isError} textErrorApi="An error occurred while loading data" />
       </div>
     </section>
   );

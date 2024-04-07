@@ -1,5 +1,5 @@
 import styles from './Statistics.module.css';
-
+import React from 'react';
 function Statistics() {
   return (
     <section className={styles.statistics}>

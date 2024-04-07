@@ -6,6 +6,7 @@ import { widgetArticlesBlogApi } from '@widgets/articles-blog/api/widgetArticles
 import { widgetArticleContentApi } from '@widgets/article-content/api/widgetArticleContentApi';
 import { entitiesArticleUserApi } from '@entities/articleUser/api/entitiesArticleUserApi';
 import { widgetArticleCommentsListApi } from '@widgets/article-comments-list/api/widgetArticleCommentsListApi';
+import { featuresAddCommentApi } from '@features/add-comment/api/featuresAddCommentApi';
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -18,6 +19,7 @@ export const store = configureStore({
       widgetArticleContentApi.middleware,
       entitiesArticleUserApi.middleware,
       widgetArticleCommentsListApi.middleware,
+      featuresAddCommentApi.middleware,
     ),
 });
 
