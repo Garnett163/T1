@@ -1,8 +1,8 @@
+import LinesEllipsis from 'react-lines-ellipsis';
 import ArticleUser from '@entities/articleUser/ui/ArticleUser';
 import styles from './ArticleCard.module.css';
 import ratingIcon from '@shared/assets/svg/ratingIcon.svg';
 import { Link } from 'react-router-dom';
-import LinesEllipsis from 'react-lines-ellipsis';
 
 interface ArticleCardProps {
   id?: number;
@@ -34,7 +34,6 @@ function ArticleCard({ id, title, hashTags, rating, description, userId }: Artic
           ))}
         </div>
         {/* <p className={styles.description}>{smartCutText(description, MAX_DESCRIPTION_LENGTH)}</p> */}
-
         <LinesEllipsis className={styles.description} text={description} maxLine={3} ellipsis="..." trimRight />
       </li>
     </Link>
